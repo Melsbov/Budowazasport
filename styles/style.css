@@ -1,0 +1,560 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    background-color: #333;
+    overflow-x: hidden;
+}
+
+.headerhome{
+    height: 70vh;
+}
+
+header>p{
+    text-transform: uppercase;
+    position: relative;
+    left: 3vw;
+    /* width: 23%; */
+}
+
+h1{
+    position: relative;
+    font-size: 3em;
+    color: white;
+    z-index: -1;
+}
+
+h2{
+    font-size: 2em;
+    color: white;
+}
+
+h3{
+    color: #fbbc53;
+}
+
+p{
+    color: white;
+}
+
+
+
+
+.menu {
+    background-color: rgba(20, 20, 20, 0.9);
+    overflow-x: visible;
+}
+
+/* Basic styling for the navigation */
+.menu ul {
+    margin: 0 auto 0; 
+    padding: 0; 
+    list-style: none; 
+    display: table;
+    width: auto;
+    /* text-align: center; */
+}
+
+.menu ul li {
+    display: table-cell; 
+    position: relative; 
+    padding: 15px 0;
+}
+
+.menu>ul li>a, .menu>ul li>p {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 0px 5px;
+    margin: 15px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.menu ul li ul li a{
+    margin: 5px 20px;
+}
+
+.menu>ul li>a:after, .menu>ul li>p:after{
+    z-index: -1;
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    top: 60%;
+    background: #f13a3a;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.menu>ul li>a:hover:after, .menu>ul li>p:hover:after{
+    width: 100%; 
+    left: 0; 
+}
+
+/* Styling for the submenu */
+.menu ul ul {
+    display: none;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222222;
+    /* display: block; */
+}
+
+.menu ul ul li {
+    display: block;
+}
+
+/* Show submenu on hover */
+.menu ul li:hover > ul {
+    display: block;
+    width: 16em;
+}
+
+.menu{
+    position: relative;
+}
+
+.menu img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3vw;
+    width: 5em;
+    height: auto;
+}
+
+
+
+/*//////////////////*/
+/*/ TWEEDE HEADER /*/
+/*//////////////////*/
+
+.submenu1-content {
+    align-items: center;
+}
+
+#tweedeheader {
+    height: 50vh;
+    width: 40em;
+}
+
+#tweedeheader img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 60vh;
+    z-index: -2;
+}
+
+#tweedeheader div{
+    position: relative;
+    left: 3vw;
+    top: 2em;
+}
+
+
+
+
+
+
+/*//////////////////*/
+/*/ MEESTER JEROEN /*/
+/*//////////////////*/
+
+#meesterjeroen {
+    margin-top: 3em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#meesterjeroen>div{
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-around; */
+}
+
+#meesterjeroen img{
+    margin-right: 1em;
+}
+
+
+
+
+
+
+/*//////////////////*/
+/*/ LESROOSTER /*/
+/*//////////////////*/
+
+#roosters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    margin-top: 2em;
+}
+
+#roosters ul {
+    margin: 0 auto 0; 
+    padding: 0; 
+    list-style: none; 
+    display: flex;
+    width: auto;
+    text-align: center;
+    flex-direction: column;    
+}
+
+#roosters>ul>li {
+    display: table-cell; 
+    position: relative; 
+    padding: 15px 0;
+}
+
+#roosters ul li>h3 {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 0px 5px;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* #roosters ul li ul li h3{
+    margin: 5px 20px;
+} */
+
+#roosters ul li>h3:after {
+    z-index: -1;
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    top: 60%;
+    background: #f13a3a;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+#roosters ul li>h3:hover:after{
+    width: 100%; 
+    left: 0; 
+}
+
+#roosters .locatie:has(:hover) h3:after{
+    width: 100%; 
+    left: 0; 
+}
+
+#roosters .locatie:has(.showrooster:hover) h3:after{
+    width: 100%; 
+    left: 0; 
+}
+
+#roosters>ul>li>ul {
+    display: none;
+    position: relative;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222222;
+    /* display: block; */
+}
+
+#roosters ul ul li {
+    display: block;
+}
+
+/* Show submenu on hover */
+#roosters ul li:hover > ul {
+    display: block;
+}
+
+#roosters .dag{
+    padding: 1em 0;
+}
+
+#roosters .dag li{
+    padding: 0.5em 0;
+}
+
+
+
+
+
+
+/*//////////////////*/
+/*/ CONTACT /*/
+/*//////////////////*/
+
+#contact main div{
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#contact main a{
+    color: #f13a3a;
+}
+
+#contact main div ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contact main div ul li{
+    padding: 0.6em;
+}
+
+
+
+/*//////////////////*/
+/*/ Inschrijven /*/
+/*//////////////////*/
+
+#inschrijven main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inschrijven main>div {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+#inschrijven main div div p{
+    width: 40em;
+    word-wrap: break-word;
+}
+
+#inschrijven main p{
+    padding: 1em 0;
+}
+
+#inschrijven main a{
+    color: #f13a3a;
+}
+
+#inschrijven main div>div:nth-of-type(1){
+margin-top: 1em;
+}
+
+#inschrijven main div>div:nth-of-type(2){
+    margin-top: 2em;
+}
+
+
+
+
+/*//////////////////*/
+/*/ Contributie /*/
+/*//////////////////*/
+
+#contributie main div{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contributie main table{
+    width: 40em;
+    padding-bottom: 5em;
+}
+
+#contributie main table tbody .tableheader{
+    display: flex;
+    align-items: center;    
+}
+
+#contributie main table h3{
+    margin-right: 0.5em;
+}
+
+#contributie main table tbody tr td{
+    color: white;
+    padding: 0.3em 0;
+}
+
+
+
+/*//////////////////*/
+/*/ NIEUWS /*/
+/*//////////////////*/
+
+#nieuws main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#nieuws main>div{
+    margin-top: 2em;
+}
+
+#nieuws #silvio {
+    margin-top: 3em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nieuws #silvio>div{
+    width: 60vw;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* justify-content: space-around; */
+}
+
+#nieuws #silvio img{
+    margin-right: 1em;
+    height: 30em;
+}
+
+#nieuws #silvio div div:nth-of-type(2){
+    width: 35em;
+}
+
+
+
+
+/*//////////////////*/
+/*/ EVENEMENTEN /*/
+/*//////////////////*/
+
+#evenementen main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#evenementen main>div {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+#evenementen main div div p{
+    width: 40em;
+    word-wrap: break-word;
+}
+
+
+#evenementen main p{
+    /* padding: 1em 0; */
+}
+
+#evenementen main a{
+    color: #f13a3a;
+}
+
+#evenementen main div>div{
+    margin-top: 2em;
+}
+
+
+
+
+
+/*//////////////////*/
+/*/ GRADUATIE EISEN /*/
+/*//////////////////*/
+
+#graduatieeisen main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#graduatieeisen main>div {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+#graduatieeisen main div div p{
+    width: 40em;
+    word-wrap: break-word;
+}
+
+#graduatieeisen main h4{
+    color: #fbbc53;
+    margin-top: 1em;
+}
+
+#graduatieeisen main p{
+    padding: 0.2em 0;
+}
+
+#graduatieeisen main a{
+    color: #f13a3a;
+}
+
+#graduatieeisen main div{
+margin-top: 1em;
+}
+
+#graduatieeisen main div:nth-of-type(2){
+    margin-top: 3em;
+    }
+    
+
+
+
+
+
+/*//////////////////*/
+/*/ FOOTER /*/
+/*//////////////////*/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 2.5em;
+    background-color: #222222;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
