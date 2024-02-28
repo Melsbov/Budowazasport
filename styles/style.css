@@ -42,7 +42,49 @@ p{
     color: white;
 }
 
+/*//////////////////*/
+/*/ BACKGROUND /*/
+/*//////////////////*/
 
+body main #backgroundimg div{
+    position: fixed;
+    z-index: -3;
+}
+
+body main #backgroundimg div svg{
+    height: calc(10vw + 5em);
+    width: auto;
+}
+
+body main #backgroundimg div path{
+    stroke: #2b2b2b;
+}
+
+body main #backgroundimg div svg:nth-of-type(2){
+    position: relative;
+    left: calc(-3vw - 1em);
+}
+
+body main #backgroundimg div:nth-of-type(1){
+    top: 62vh;
+    left: 8vw;
+}
+body main #backgroundimg div:nth-of-type(2){
+    top: 1vh;
+    left: 1vw;
+}
+body main #backgroundimg div:nth-of-type(3){
+    top: 70vh;
+    left: 58vw;
+}
+body main #backgroundimg div:nth-of-type(4){
+    top: 34vh;
+    left: 35vw;
+}
+body main #backgroundimg div:nth-of-type(5){
+    top: 15vh;
+    right: 8vw;
+}
 
 
 .menu {
@@ -104,6 +146,7 @@ p{
 
 /* Styling for the submenu */
 .menu ul ul {
+    z-index: 3;
     display: none;
     position: absolute;
     top: 80%;
@@ -218,7 +261,7 @@ p{
     padding: 0; 
     list-style: none; 
     display: flex;
-    width: auto;
+    width: 26em;
     text-align: center;
     flex-direction: column;    
 }
@@ -239,10 +282,6 @@ p{
     position: relative;
     z-index: 2;
 }
-
-/* #roosters ul li ul li h3{
-    margin: 5px 20px;
-} */
 
 #roosters ul li>h3:after {
     z-index: -1;
@@ -265,11 +304,6 @@ p{
 }
 
 #roosters .locatie:has(:hover) h3:after{
-    width: 100%; 
-    left: 0; 
-}
-
-#roosters .locatie:has(.showrooster:hover) h3:after{
     width: 100%; 
     left: 0; 
 }
@@ -310,7 +344,7 @@ p{
 /*/ CONTACT /*/
 /*//////////////////*/
 
-#contact main div{
+#contact main #contactdiv{
     margin-top: 2em;
     display: flex;
     align-items: center;
@@ -322,14 +356,14 @@ p{
     color: #f13a3a;
 }
 
-#contact main div ul{
+#contact main #contactdiv ul{
     list-style: none;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-#contact main div ul li{
+#contact main #contactdiv ul li{
     padding: 0.6em;
 }
 
@@ -345,7 +379,7 @@ p{
     justify-content: center;
 }
 
-#inschrijven main>div {
+#inschrijven main>div:first-of-type {
     width: 50vw;
     display: flex;
     justify-content: center;
@@ -367,11 +401,11 @@ p{
     color: #f13a3a;
 }
 
-#inschrijven main div>div:nth-of-type(1){
-margin-top: 1em;
+#inschrijven main div:first-of-type>div:nth-of-type(1){
+    margin-top: 1em;
 }
 
-#inschrijven main div>div:nth-of-type(2){
+#inschrijven main div:first-of-type>div:nth-of-type(2){
     margin-top: 2em;
 }
 
@@ -379,10 +413,10 @@ margin-top: 1em;
 
 
 /*//////////////////*/
-/*/ Contributie /*/
+/*/ CONTRIBUTIE /*/
 /*//////////////////*/
 
-#contributie main div{
+#contributie main #table{
     margin-top: 2em;
     display: flex;
     justify-content: center;
@@ -463,7 +497,7 @@ margin-top: 1em;
     justify-content: center;
 }
 
-#evenementen main>div {
+#evenementen main>div:first-of-type {
     width: 50vw;
     display: flex;
     justify-content: center;
@@ -477,16 +511,11 @@ margin-top: 1em;
     word-wrap: break-word;
 }
 
-
-#evenementen main p{
-    /* padding: 1em 0; */
-}
-
 #evenementen main a{
     color: #f13a3a;
 }
 
-#evenementen main div>div{
+#evenementen main div:first-of-type>div{
     margin-top: 2em;
 }
 
@@ -498,13 +527,146 @@ margin-top: 1em;
 /*/ GRADUATIE EISEN /*/
 /*//////////////////*/
 
-#graduatieeisen main {
+#Banden{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    margin-top: 2em;
+}
+
+#Banden a{
+    color: #f13a3a;
+}
+
+#Banden ul {
+    margin: 0 auto 0; 
+    padding: 0; 
+    list-style: none; 
+    display: flex;
+    width: 26em;
+    text-align: center;
+    flex-direction: column;    
+}
+
+#Banden>ul>li {
+    display: table-cell; 
+    position: relative; 
+    /* padding: 15px 0; */
+}
+
+#Banden h3 {
+    margin-top: 1em;
+}
+
+#Banden ul li>h4 {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 0px 5px;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 2;
+    color: #fbbc53;
+}
+
+#Banden ul li>h4:after {
+    z-index: -1;
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 15px;
+    left: 50%;
+    position: absolute;
+    top: 60%;
+    /* background: #f13a3a; */
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+    display: block;
+}
+
+#Banden ul li:nth-of-type(1)>h4:after {
+    background: #fff;
+}
+#Banden ul li:nth-of-type(2)>h4:after {
+    background: #ffd900;
+}
+#Banden ul li:nth-of-type(3)>h4:after {
+    background: #ff4800;
+}
+#Banden ul li:nth-of-type(4)>h4:after {
+    background: #006d05;
+}
+#Banden ul li:nth-of-type(5)>h4:after {
+    background: #101eec;
+}
+#Banden ul li:nth-of-type(6)>h4:after {
+    background: #382315;
+}
+#Banden ul li:nth-of-type(7)>h4:after {
+    background: linear-gradient(90deg, #fff 18%, #ffd900 18%, #ffd900 34%, #ff4800 34%, 
+    #ff4800 50%, #006d05 50%, #006d05 66%, #101eec 66%, #101eec 82%,
+    #382315 82%, #382315 100%); 
+}
+
+#Banden ul li>h4:hover:after{
+    width: 100%; 
+    left: 0; 
+}
+
+#Banden .bandkleur:has(:hover) h4:after{
+    width: 100%; 
+    left: 0; 
+}
+
+#Banden .bandkleur:has(.showgraduaties:hover) h4:after{
+    width: 100%; 
+    left: 0; 
+}
+
+#Banden>ul>li>ul {
+    display: none;
+    position: relative;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #222222;
+    margin-bottom: 1em;
+    /* display: block; */
+}
+
+#Banden ul ul li {
+    display: block;
+}
+
+/* Show submenu on hover */
+#Banden ul li:hover > ul {
+    display: block;
+}
+
+#Banden .showgraduaties{
+    padding: 1em 0;
+}
+
+#Banden .showgraduaties li{
+    padding: 0.5em 0;
+}
+
+
+
+
+
+
+
+/* #graduatieeisen main {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#graduatieeisen main>div {
+#graduatieeisen main>div:first-of-type {
     width: 50vw;
     display: flex;
     justify-content: center;
@@ -531,13 +693,13 @@ margin-top: 1em;
     color: #f13a3a;
 }
 
-#graduatieeisen main div{
-margin-top: 1em;
+#graduatieeisen main>div:first-of-type{
+    margin-top: 1em;
 }
 
-#graduatieeisen main div:nth-of-type(2){
+#graduatieeisen main>div:first-of-type{
     margin-top: 3em;
-    }
+} */
     
 
 
@@ -557,4 +719,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 4;
+}
+
+footer a{
+    color: white;
+}
+
+footer a:hover{
+    color: #f13a3a;
 }
