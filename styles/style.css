@@ -42,6 +42,10 @@ p{
     color: white;
 }
 
+a{
+    color: #f13a3a;
+}
+
 /*//////////////////*/
 /*/ BACKGROUND /*/
 /*//////////////////*/
@@ -210,8 +214,52 @@ body main #backgroundimg div:nth-of-type(5){
     top: 2em;
 }
 
+/*//////////////////*/
+/*/ HOMEDIV /*/
+/*//////////////////*/
 
 
+.homediv {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.homediv>div{
+    width: 50vw;
+}
+
+#meesterjeroen>div, #budopak>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;  
+}
+
+#meesterjeroen img, #budopak img{
+    margin-right: 1em;
+}
+
+#budopak{
+    margin-bottom: 5em;
+}
+
+/* .homediv{
+    margin-top: 3em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homediv>div{
+    margin-top: 3em;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+} */
 
 
 
@@ -219,7 +267,7 @@ body main #backgroundimg div:nth-of-type(5){
 /*/ MEESTER JEROEN /*/
 /*//////////////////*/
 
-#meesterjeroen {
+/* #meesterjeroen {
     margin-top: 3em;
     width: 100%;
     display: flex;
@@ -232,15 +280,37 @@ body main #backgroundimg div:nth-of-type(5){
     display: flex;
     align-items: center;
     justify-content: center;
-    /* justify-content: space-around; */
+    flex-direction: row;  
+
 }
 
 #meesterjeroen img{
     margin-right: 1em;
+} */
+
+
+
+
+
+
+
+/*//////////////////*/
+/*/ VAKANTIE ROOSTER /*/
+/*//////////////////*/
+
+#vakantierooster{
+    /* VAKANTIE ROOSTER AAN = Display flex 
+    VAKANTIE ROOSTER UIT = Display none */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    margin-top: 2em;
 }
 
-
-
+#vakantierooster h3{
+    margin-top: 1em;
+}
 
 
 
@@ -333,6 +403,10 @@ body main #backgroundimg div:nth-of-type(5){
 
 #roosters .dag li{
     padding: 0.5em 0;
+}
+
+#roosters .dag p:hover{
+    font-weight: bold;
 }
 
 
@@ -653,53 +727,6 @@ body main #backgroundimg div:nth-of-type(5){
 #Banden .showgraduaties li{
     padding: 0.5em 0;
 }
-
-
-
-
-
-
-
-/* #graduatieeisen main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#graduatieeisen main>div:first-of-type {
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 2em;
-}
-
-#graduatieeisen main div div p{
-    width: 40em;
-    word-wrap: break-word;
-}
-
-#graduatieeisen main h4{
-    color: #fbbc53;
-    margin-top: 1em;
-}
-
-#graduatieeisen main p{
-    padding: 0.2em 0;
-}
-
-#graduatieeisen main a{
-    color: #f13a3a;
-}
-
-#graduatieeisen main>div:first-of-type{
-    margin-top: 1em;
-}
-
-#graduatieeisen main>div:first-of-type{
-    margin-top: 3em;
-} */
     
 
 
