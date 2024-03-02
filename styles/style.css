@@ -9,6 +9,11 @@
 body{
     background-color: #333;
     overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+main{
+    margin-bottom: 10em;
 }
 
 .headerhome{
@@ -53,6 +58,7 @@ a{
 body main #backgroundimg div{
     position: fixed;
     z-index: -3;
+    user-select: none;
 }
 
 body main #backgroundimg div svg{
@@ -61,7 +67,7 @@ body main #backgroundimg div svg{
 }
 
 body main #backgroundimg div path{
-    stroke: #2b2b2b;
+    stroke: #2d2d2d;
 }
 
 body main #backgroundimg div svg:nth-of-type(2){
@@ -94,6 +100,7 @@ body main #backgroundimg div:nth-of-type(5){
 .menu {
     background-color: rgba(20, 20, 20, 0.9);
     overflow-x: visible;
+    display: flex;
 }
 
 /* Basic styling for the navigation */
@@ -101,9 +108,10 @@ body main #backgroundimg div:nth-of-type(5){
     margin: 0 auto 0; 
     padding: 0; 
     list-style: none; 
-    display: table;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: auto;
-    /* text-align: center; */
 }
 
 .menu ul li {
@@ -172,6 +180,7 @@ body main #backgroundimg div:nth-of-type(5){
 
 .menu{
     position: relative;
+    height: 5em;
 }
 
 .menu img{
@@ -181,6 +190,124 @@ body main #backgroundimg div:nth-of-type(5){
     left: 3vw;
     width: 5em;
     height: auto;
+}
+
+.phonemenu{
+    display: none;
+}
+
+@media screen and (max-width: 62em) {
+    .menu{
+        display: none;
+    }
+
+    .phonemenu {
+        display: flex;
+        justify-content: end;
+        background-color: rgba(20, 20, 20, 0.9);
+        overflow-x: visible;
+        height: 5em;
+    }
+    
+    .phonemenu>ul {
+        padding-right: 0em; 
+    }
+
+    .phonemenu ul {
+        list-style: none; 
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: auto;
+        text-align: end;
+    }
+    
+    .phonemenu ul li {
+        display: table-cell; 
+        position: relative; 
+    }
+
+    .phonemenu ul li ul li{
+        padding: 15px 0;
+    }
+    
+    .phonemenu>ul li>a, .phonemenu>ul li>div {
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        display: inline-block;
+        padding: 0px 5px;
+        margin: 15px 20px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .phonemenu ul li ul li a{
+        margin: 5px 20px;
+    }
+    
+    /* .phonemenu>ul li>a:after, .phonemenu>ul li>div:after{
+        z-index: -1;
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 10px;
+        left: 50%;
+        position: absolute;
+        top: 60%;
+        background: #f13a3a;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    
+    .phonemenu>ul li>a:hover:after, .phonemenu>ul li>div:hover:after{
+        width: 100%; 
+        left: 0; 
+    } */
+    
+    /* Styling for the submenu */
+    .phonemenu ul ul {
+        z-index: 3;
+        display: none;
+        position: absolute;
+        top: 80%;
+        transform: translateX(-65%);
+        background-color: #222222;
+        width: 16em;
+        /* display: block; */
+    }
+    
+    .phonemenu ul ul li {
+        display: block;
+        width: 100%;
+    }
+    
+    /* Show submenu on hover */
+    .phonemenu ul li:hover > ul {
+        display: block;
+        width: 16em;
+    }
+    
+    .phonemenu{
+        position: relative;
+    }
+    
+    .phonemenu img{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 5vw;
+        width: 5em;
+        height: auto;
+    }
+
+    .phonemenu div{
+        height: 2em;
+        width: 3em;
+        background: linear-gradient(180deg, #fff 15%, #00000000 15%, #00000000 42.5%, #fff 42.5%, #fff 57.5%, #00000000 57.5%, #00000000 85%, #fff 85%);
+    }
 }
 
 
@@ -215,6 +342,32 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 /*//////////////////*/
+/*/ STREEP /*/
+/*//////////////////*/
+
+.streepflex{
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+.streep{
+    height: 2px;
+    width: 40vw;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 95em) {
+    .streep{
+        width: calc(40vw + 10em)
+    }
+}
+
+
+
+
+
+/*//////////////////*/
 /*/ HOMEDIV /*/
 /*//////////////////*/
 
@@ -226,67 +379,73 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 .homediv>div{
-    width: 50vw;
+    width: 40vw;
 }
 
-#meesterjeroen>div, #budopak>div{
+#meesterjeroen>div, #budopak>div, #vallen>div{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;  
 }
 
-#meesterjeroen img, #budopak img{
+#meesterjeroen img, #budopak img, #vallen img{
     margin-right: 1em;
+    height: 15em;
+}
+
+.homediv p{
+    margin: 0.4em 0;
 }
 
 #budopak{
     margin-bottom: 5em;
 }
 
-/* .homediv{
-    margin-top: 3em;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 95em) {
+    .homediv>div{
+        width: calc(40vw + 10em)
+    }
 }
 
-.homediv>div{
-    margin-top: 3em;
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;  
-} */
+@media screen and (max-width: 62em) {
+    #meesterjeroen>div, #budopak>div {
+        flex-direction: column-reverse;  
+    }
+
+    #vallen img{
+        width: calc(40vw + 10em);
+        height: auto;
+    }
+}
+
+
+
 
 
 
 /*//////////////////*/
-/*/ MEESTER JEROEN /*/
+/*/ OVER ONS /*/
 /*//////////////////*/
 
-/* #meesterjeroen {
-    margin-top: 3em;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#overons .overonsdiv {
+    margin-top: 2em;
 }
 
-#meesterjeroen>div{
-    width: 60vw;
+#overons .overonsdiv {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;  
-
+    flex-direction: column;
 }
 
-#meesterjeroen img{
-    margin-right: 1em;
-} */
+#overons .overonsdiv div {
+    width: 40vw;
+}
+
+#overons .overonsdiv div p{
+    margin: 0.6em 0;
+}
 
 
 
@@ -339,7 +498,8 @@ body main #backgroundimg div:nth-of-type(5){
 #roosters>ul>li {
     display: table-cell; 
     position: relative; 
-    padding: 15px 0;
+    margin: 10px 0;
+    padding: 2em;
 }
 
 #roosters ul li>h3 {
@@ -347,8 +507,7 @@ body main #backgroundimg div:nth-of-type(5){
     text-decoration: none;
     letter-spacing: 0.15em;
     display: inline-block;
-    padding: 0px 5px;
-    padding: 15px 20px;
+    padding-bottom: 15px;
     position: relative;
     z-index: 2;
 }
@@ -368,12 +527,23 @@ body main #backgroundimg div:nth-of-type(5){
     width: 0;
 }
 
-#roosters ul li>h3:hover:after{
+#roosters ul:has(#schagen:hover) #schagen h3:after{
     width: 100%; 
     left: 0; 
 }
-
-#roosters .locatie:has(:hover) h3:after{
+#roosters ul:has(#callantsoog:hover) #callantsoog h3:after{
+    width: 100%; 
+    left: 0; 
+}
+#roosters ul:has(#tzand:hover) #tzand h3:after{
+    width: 100%; 
+    left: 0; 
+}
+#roosters ul:has(#petten:hover) #petten h3:after{
+    width: 100%; 
+    left: 0; 
+}
+#roosters ul:has(#annapaulowna:hover) #annapaulowna h3:after{
     width: 100%; 
     left: 0; 
 }
@@ -386,6 +556,10 @@ body main #backgroundimg div:nth-of-type(5){
     transform: translateX(-50%);
     background-color: #222222;
     /* display: block; */
+}
+
+#roosters .active ul{
+    display: block;
 }
 
 #roosters ul ul li {
@@ -407,6 +581,10 @@ body main #backgroundimg div:nth-of-type(5){
 
 #roosters .dag p:hover{
     font-weight: bold;
+}
+
+#roosters .locatie{
+    background: linear-gradient(180deg, #222222 97%, #fbbc53 97%);
 }
 
 
@@ -601,7 +779,21 @@ body main #backgroundimg div:nth-of-type(5){
 /*/ GRADUATIE EISEN /*/
 /*//////////////////*/
 
-#Banden{
+.graduatieeisendiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.graduatieeisendiv div{
+    width: 40vw;
+}
+
+#Banden1{
+    display: none;
+}
+
+/* #Banden{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -626,7 +818,6 @@ body main #backgroundimg div:nth-of-type(5){
 #Banden>ul>li {
     display: table-cell; 
     position: relative; 
-    /* padding: 15px 0; */
 }
 
 #Banden h3 {
@@ -655,7 +846,6 @@ body main #backgroundimg div:nth-of-type(5){
     left: 50%;
     position: absolute;
     top: 60%;
-    /* background: #f13a3a; */
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
     display: block;
@@ -708,14 +898,13 @@ body main #backgroundimg div:nth-of-type(5){
     transform: translateX(-50%);
     background-color: #222222;
     margin-bottom: 1em;
-    /* display: block; */
+    display: block;
 }
 
 #Banden ul ul li {
     display: block;
 }
 
-/* Show submenu on hover */
 #Banden ul li:hover > ul {
     display: block;
 }
@@ -726,8 +915,81 @@ body main #backgroundimg div:nth-of-type(5){
 
 #Banden .showgraduaties li{
     padding: 0.5em 0;
+} */
+    
+
+/*//////////////////*/
+/*/ FOTOS /*/
+/*//////////////////*/
+#fotosgalerij {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+#fotosgalerij .row{
+    margin-top: 1em;
+}
+
+#fotos .image {
+    position: relative;
 }
     
+#fotos .image:hover:after {
+    position: absolute;
+    content: attr(title);
+    display: inline-block;
+    left: 0px;
+    top: 0px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+#fotos .column:hover .title {
+/*becomes visible on hover*/
+    opacity: 1;        
+}
+
+#fotos #fotosgalerij .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+#fotos #fotosgalerij .column {
+    flex: 15%;
+    max-width: 15%;
+    padding: 0 4px;
+}
+
+#fotos #fotosgalerij .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+#fotos #fotosgalerij .column {
+    flex: 20%;
+    max-width: 20%;
+}
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+#fotos #fotosgalerij .column {
+    flex: 25%;
+    max-width: 25%;
+}
+}
+
+
+
 
 
 
@@ -755,4 +1017,28 @@ footer a{
 
 footer a:hover{
     color: #f13a3a;
+}
+
+.footerphone1, .footerphone2 {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .footer, .footerphone2{
+        display: none;
+    }
+
+    .footerphone1{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer, .footerphone1{
+        display: none;
+    }
+
+    .footerphone2{
+        display: block;
+    }
 }
