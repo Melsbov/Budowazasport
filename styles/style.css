@@ -1,4 +1,39 @@
-/* Resetting default margin and padding */
+:root {
+    --kleur-text:#ffffff;
+    --kleur-link: #f55757; 
+    --kleur-h3: #fbbc53;
+    --achtergrond-kleur: #333333;
+    --kanji-kleur: #2d2d2d;
+    --achtergrond-kleur-menu: #222222;
+    --achtergrond-kleur-hoofdmenu: #1b1b1b;
+    --kleur-hoverlijn: #f13a3a;
+    --onzichtbaar: #00000000;
+}
+
+.darkmode {
+    --kleur-text:#000000;
+    --kleur-link: #22285f; 
+    --kleur-h3: #323385;
+    --achtergrond-kleur: #ffffff;
+    --kanji-kleur: #efefef;
+    --achtergrond-kleur-menu: #dfdfdf;
+    --achtergrond-kleur-hoofdmenu: #cccccc;
+    --kleur-hoverlijn: #f13a3a;
+    --onzichtbaar: #00000000;
+}
+
+#dark-mode-toggle, #dark-mode-toggle-phone{
+    display: flex;
+    align-items: center;
+}
+
+#dark-mode-toggle div, #dark-mode-toggle-phone div{
+    width: 2em;
+    height: 1em;
+    background-color: var(--kleur-h3);
+    align-items: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +42,7 @@
 }
 
 body{
-    background-color: #333;
+    background-color: var(--achtergrond-kleur);
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -30,25 +65,25 @@ header>p{
 h1{
     position: relative;
     font-size: 3em;
-    color: white;
+    color: var(--kleur-text);
     z-index: -1;
 }
 
 h2{
     font-size: 2em;
-    color: white;
+    color: var(--kleur-text);
 }
 
 h3{
-    color: #fbbc53;
+    color: var(--kleur-h3);
 }
 
 p{
-    color: white;
+    color: var(--kleur-text);
 }
 
 a{
-    color: #f13a3a;
+    color: var(--kleur-link);
 }
 
 /*//////////////////*/
@@ -67,7 +102,7 @@ body main #backgroundimg div svg{
 }
 
 body main #backgroundimg div path{
-    stroke: #2d2d2d;
+    stroke: var(--kanji-kleur);
 }
 
 body main #backgroundimg div svg:nth-of-type(2){
@@ -98,7 +133,7 @@ body main #backgroundimg div:nth-of-type(5){
 
 
 .menu {
-    background-color: rgba(20, 20, 20, 0.9);
+    background-color: var(--achtergrond-kleur-hoofdmenu);
     overflow-x: visible;
     display: flex;
 }
@@ -121,7 +156,7 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 .menu>ul li>a, .menu>ul li>p {
-    color: #fff;
+    color: var(--kleur-text);
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.15em;
@@ -146,7 +181,7 @@ body main #backgroundimg div:nth-of-type(5){
     left: 50%;
     position: absolute;
     top: 60%;
-    background: #f13a3a;
+    background: var(--kleur-hoverlijn);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
 }
@@ -164,7 +199,7 @@ body main #backgroundimg div:nth-of-type(5){
     top: 80%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #222222;
+    background-color: var(--achtergrond-kleur-menu);
     width: 16em;
     /* display: block; */
 }
@@ -208,7 +243,7 @@ body main #backgroundimg div:nth-of-type(5){
     .phonemenu {
         display: flex;
         justify-content: end;
-        background-color: rgba(20, 20, 20, 0.9);
+        background-color: var(--achtergrond-kleur-hoofdmenu);
         overflow-x: visible;
         height: 5em;
     }
@@ -236,7 +271,7 @@ body main #backgroundimg div:nth-of-type(5){
     }
     
     .phonemenu>ul li>a, .phonemenu>ul li>div {
-        color: #fff;
+        color: var(--kleur-text);
         text-transform: uppercase;
         text-decoration: none;
         letter-spacing: 0.15em;
@@ -261,7 +296,7 @@ body main #backgroundimg div:nth-of-type(5){
         left: 50%;
         position: absolute;
         top: 60%;
-        background: #f13a3a;
+        background: var(--kleur-hoverlijn);
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
     }
@@ -278,7 +313,7 @@ body main #backgroundimg div:nth-of-type(5){
         position: absolute;
         top: 80%;
         transform: translateX(-65%);
-        background-color: #222222;
+        background-color: var(--achtergrond-kleur-menu);
         width: 16em;
         /* display: block; */
     }
@@ -307,10 +342,11 @@ body main #backgroundimg div:nth-of-type(5){
         height: auto;
     }
 
-    .phonemenu div{
+    .phonemenu>ul>li>div{
         height: 2em;
         width: 3em;
-        background: linear-gradient(180deg, #fff 15%, #00000000 15%, #00000000 42.5%, #fff 42.5%, #fff 57.5%, #00000000 57.5%, #00000000 85%, #fff 85%);
+        background: linear-gradient(180deg, var(--kleur-text) 15%, var(--onzichtbaar) 15%, var(--onzichtbaar) 42.5%,
+        var(--kleur-text) 42.5%, var(--kleur-text) 57.5%, var(--onzichtbaar) 57.5%, var(--onzichtbaar) 85%, var(--kleur-text) 85%);
     }
 }
 
@@ -358,7 +394,7 @@ body main #backgroundimg div:nth-of-type(5){
 .streep{
     height: 2px;
     width: 40vw;
-    background-color: #fff;
+    background-color: var(--kleur-text);
 }
 
 @media screen and (max-width: 95em) {
@@ -400,10 +436,6 @@ body main #backgroundimg div:nth-of-type(5){
 #meesterjeroen img, #budopak img, #vallen img{
     margin-right: 1em;
     height: 15em;
-}
-
-.homediv p{
-    margin: 0.4em 0;
 }
 
 #budopak{
@@ -449,10 +481,6 @@ body main #backgroundimg div:nth-of-type(5){
 
 #overons .overonsdiv div {
     width: 40vw;
-}
-
-#overons .overonsdiv div p{
-    margin: 0.6em 0;
 }
 
 @media screen and (max-width: 95em) {
@@ -542,7 +570,7 @@ body main #backgroundimg div:nth-of-type(5){
     left: 50%;
     position: absolute;
     top: 60%;
-    background: #f13a3a;
+    background: var(--kleur-hoverlijn);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
 }
@@ -550,7 +578,6 @@ body main #backgroundimg div:nth-of-type(5){
 #roosters ul:has(#schagen:hover) #schagen h3:after{
     width: 100%; 
     left: 0; 
-    background: linear-gradient(180deg, #222222 99.5%, #fbbc53 99.5%);
 }
 #roosters ul:has(#callantsoog:hover) #callantsoog h3:after{
     width: 100%; 
@@ -575,7 +602,6 @@ body main #backgroundimg div:nth-of-type(5){
     top: 1em;
     left: 50%;
     transform: translateX(-50%);
-    /* background-color: #222222; */
     /* display: block; */
 }
 
@@ -587,9 +613,10 @@ body main #backgroundimg div:nth-of-type(5){
     display: block;
 }
 
-/* Show submenu on hover */
-#roosters ul li:hover > ul {
-    display: block;
+@media screen and (min-width: 999px) {
+    #roosters ul li:hover > ul {
+        display: block;
+    }
 }
 
 #roosters .dag{
@@ -609,7 +636,7 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 #roosters .locatie{
-    background: linear-gradient(180deg, #222222 97%, #fbbc53 97%);
+    background: linear-gradient(180deg, var(--achtergrond-kleur-menu) 97%, var(--kleur-h3) 97%);
 }
 
 @media screen and (max-width: 600px) {
@@ -641,7 +668,7 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 #contact main a{
-    color: #f13a3a;
+    color: var(--kleur-link);
 }
 
 #contact main #contactdiv ul{
@@ -687,7 +714,7 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 #inschrijven main a{
-    color: #f13a3a;
+    color: var(--kleur-link);
 }
 
 #inschrijven main div:first-of-type>div:nth-of-type(1){
@@ -738,7 +765,7 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 #contributie main table tbody tr td{
-    color: white;
+    color: var(--kleur-text);
     padding: 0.3em 0;
 }
 
@@ -779,7 +806,6 @@ body main #backgroundimg div:nth-of-type(5){
 
 #nieuws main>div{
     margin-top: 2em;
-    /* width: 40vw; */
 }
 
 #nieuws #silvio {
@@ -808,11 +834,6 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 @media screen and (max-width: 1200px) {
-    /* #nieuws #silvio img{
-        width: calc(70vw + 10em);
-        height: auto;
-    } */
-
     #nieuws #silvio>div{
         width: calc(40vw + 10em);
         display: flex;
@@ -856,7 +877,7 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 #evenementen main a{
-    color: #f13a3a;
+    color: var(--kleur-link);
 }
 
 #evenementen main div:first-of-type>div{
@@ -911,7 +932,7 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 #Banden a{
-    color: #f13a3a;
+    color: var(--kleur-hoverlijn);
 }
 
 #Banden ul {
@@ -1041,26 +1062,6 @@ body main #backgroundimg div:nth-of-type(5){
     margin-top: 1em;
 }
 
-#fotos .image {
-    position: relative;
-}
-    
-#fotos .image:hover:after {
-    position: absolute;
-    content: attr(title);
-    display: inline-block;
-    left: 0px;
-    top: 0px;
-    padding: 5px;
-    background-color: black;
-    color: white;
-}
-
-#fotos .column:hover .title {
-/*becomes visible on hover*/
-    opacity: 1;        
-}
-
 #fotos #fotosgalerij .row {
     display: flex;
     justify-content: center;
@@ -1112,7 +1113,7 @@ footer {
     position: fixed;
     bottom: 0;
     height: 2.5em;
-    background-color: #222222;
+    background-color: var(--achtergrond-kleur-menu);
     width: 100%;
     display: flex;
     align-items: center;
@@ -1121,11 +1122,11 @@ footer {
 }
 
 footer a{
-    color: white;
+    color: var(--kleur-text);
 }
 
 footer a:hover{
-    color: #f13a3a;
+    color: var(--kleur-link);
 }
 
 .footerphone1, .footerphone2 {
