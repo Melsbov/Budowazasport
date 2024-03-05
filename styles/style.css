@@ -80,6 +80,7 @@ h3{
 
 p{
     color: var(--kleur-text);
+    line-height: 1.3;
 }
 
 a{
@@ -94,10 +95,11 @@ body main #backgroundimg div{
     position: fixed;
     z-index: -3;
     user-select: none;
+    width: max-content;
 }
 
 body main #backgroundimg div svg{
-    height: calc(10vw + 5em);
+    height: calc(10vw + 6em);
     width: auto;
 }
 
@@ -111,7 +113,7 @@ body main #backgroundimg div svg:nth-of-type(2){
 }
 
 body main #backgroundimg div:nth-of-type(1){
-    top: 62vh;
+    top: 52vh;
     left: 8vw;
 }
 body main #backgroundimg div:nth-of-type(2){
@@ -119,8 +121,8 @@ body main #backgroundimg div:nth-of-type(2){
     left: 1vw;
 }
 body main #backgroundimg div:nth-of-type(3){
-    top: 70vh;
-    left: 58vw;
+    bottom: 10vh;
+    right: 4vw;
 }
 body main #backgroundimg div:nth-of-type(4){
     top: 34vh;
@@ -130,6 +132,13 @@ body main #backgroundimg div:nth-of-type(5){
     top: 15vh;
     right: 8vw;
 }
+
+
+
+
+/*//////////////////*/
+/*/ MENU /*/
+/*//////////////////*/
 
 
 .menu {
@@ -193,7 +202,7 @@ body main #backgroundimg div:nth-of-type(5){
 
 /* Styling for the submenu */
 .menu ul ul {
-    z-index: 3;
+    z-index: 300;
     display: none;
     position: absolute;
     top: 80%;
@@ -202,6 +211,17 @@ body main #backgroundimg div:nth-of-type(5){
     background-color: var(--achtergrond-kleur-menu);
     width: 16em;
     /* display: block; */
+}
+
+.menu ul li:after ul{
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .menu ul ul li {
@@ -213,7 +233,7 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 /* Show submenu on hover */
-.menu ul li:hover > ul {
+.menu ul li:hover > ul, .menu ul li:focus-within > ul {
     display: block;
 }
 
@@ -236,6 +256,10 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 @media screen and (max-width: 62em) {
+    #uitopmobiel{
+        display: none;
+    }
+
     .menu{
         display: none;
     }
@@ -324,7 +348,7 @@ body main #backgroundimg div:nth-of-type(5){
     }
     
     /* Show submenu on hover */
-    .phonemenu ul li:hover > ul {
+    .phonemenu ul li:hover > ul{
         display: block;
         width: 16em;
     }
@@ -639,14 +663,14 @@ body main #backgroundimg div:nth-of-type(5){
     background: linear-gradient(180deg, var(--achtergrond-kleur-menu) 97%, var(--kleur-h3) 97%);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     #roosters>ul>li {
-        width: 80vw;
+        width: 88vw;
         padding: 2em 1em;
     }
 
     #roosters>p{
-        width: 80vw;
+        width: 85vw;
         text-align: center;
     }
 }
@@ -923,129 +947,11 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 
-/* #Banden{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;    
-    margin-top: 2em;
-}
 
-#Banden a{
-    color: var(--kleur-hoverlijn);
-}
 
-#Banden ul {
-    margin: 0 auto 0; 
-    padding: 0; 
-    list-style: none; 
-    display: flex;
-    width: 26em;
-    text-align: center;
-    flex-direction: column;    
-}
 
-#Banden>ul>li {
-    display: table-cell; 
-    position: relative; 
-}
 
-#Banden h3 {
-    margin-top: 1em;
-}
 
-#Banden ul li>h4 {
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.15em;
-    display: inline-block;
-    padding: 0px 5px;
-    padding: 15px 20px;
-    position: relative;
-    z-index: 2;
-    color: #fbbc53;
-}
-
-#Banden ul li>h4:after {
-    z-index: -1;
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 15px;
-    left: 50%;
-    position: absolute;
-    top: 60%;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-    display: block;
-}
-
-#Banden ul li:nth-of-type(1)>h4:after {
-    background: #fff;
-}
-#Banden ul li:nth-of-type(2)>h4:after {
-    background: #ffd900;
-}
-#Banden ul li:nth-of-type(3)>h4:after {
-    background: #ff4800;
-}
-#Banden ul li:nth-of-type(4)>h4:after {
-    background: #006d05;
-}
-#Banden ul li:nth-of-type(5)>h4:after {
-    background: #101eec;
-}
-#Banden ul li:nth-of-type(6)>h4:after {
-    background: #382315;
-}
-#Banden ul li:nth-of-type(7)>h4:after {
-    background: linear-gradient(90deg, #fff 18%, #ffd900 18%, #ffd900 34%, #ff4800 34%, 
-    #ff4800 50%, #006d05 50%, #006d05 66%, #101eec 66%, #101eec 82%,
-    #382315 82%, #382315 100%); 
-}
-
-#Banden ul li>h4:hover:after{
-    width: 100%; 
-    left: 0; 
-}
-
-#Banden .bandkleur:has(:hover) h4:after{
-    width: 100%; 
-    left: 0; 
-}
-
-#Banden .bandkleur:has(.showgraduaties:hover) h4:after{
-    width: 100%; 
-    left: 0; 
-}
-
-#Banden>ul>li>ul {
-    display: none;
-    position: relative;
-    top: 1em;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #222222;
-    margin-bottom: 1em;
-    display: block;
-}
-
-#Banden ul ul li {
-    display: block;
-}
-
-#Banden ul li:hover > ul {
-    display: block;
-}
-
-#Banden .showgraduaties{
-    padding: 1em 0;
-}
-
-#Banden .showgraduaties li{
-    padding: 0.5em 0;
-} */
     
 
 /*//////////////////*/
@@ -1076,7 +982,7 @@ body main #backgroundimg div:nth-of-type(5){
     padding: 0 4px;
 }
 
-#fotos #fotosgalerij .column img {
+.column img:not(.enlarged) {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
@@ -1085,16 +991,62 @@ body main #backgroundimg div:nth-of-type(5){
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
 #fotos #fotosgalerij .column {
-    flex: 20%;
-    max-width: 20%;
+    flex: 33%;
+    max-width: 33%;
 }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
 #fotos #fotosgalerij .column {
-    flex: 25%;
-    max-width: 25%;
+    flex: 50%;
+    max-width: 50%;
+}
+}
+
+
+.image-container {
+    display: flex;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.image:hover:not(.enlarged) {
+    scale: 1.1;
+}
+
+.image{
+    cursor: pointer;
+}
+
+.enlarged {
+    cursor: pointer;
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 80%;
+    z-index: 9999;
+    object-fit: cover;
+}
+
+div:has(.enlarged):after {
+    cursor: pointer;
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 7000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 600px) {
+.enlarged {
+    width: 80%;
+    height: auto;
 }
 }
 

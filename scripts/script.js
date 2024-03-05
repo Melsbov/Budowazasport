@@ -85,84 +85,21 @@ darkModeTogglePhone.addEventListener('click', () => {
 
 
 
-// var contact = document.querySelector('#contact');
-// var contributie = document.querySelector('#contributie');
-// var evenementen = document.querySelector('#evenementen');
-// var fotos = document.querySelector('#fotos');
-// var gegradueerden = document.querySelector('#gegradueerden');
-// var graduatieeisen = document.querySelector('#graduatieeisen');
-// var index = document.querySelector('#index');
-// var inschrijven = document.querySelector('#inschrijven');
-// var lesrooster = document.querySelector('#lesrooster');
-// var nieuws = document.querySelector('#nieuws');
-// var overons = document.querySelector('#overons');
+// Listen for click events on the document body
+document.body.addEventListener('click', function(event) {
+  // Check if the clicked element does not have the 'enlarged' class
+  if (!event.target.classList.contains('enlarged')) {
+      // Remove the 'enlarged' class from all elements that have it
+      document.querySelectorAll('.enlarged').forEach(function(element) {
+          element.classList.remove('enlarged');
+      });
+  }
+});
 
-// var slider = document.querySelector('#slider div');
-
-// var indexdag = false;
-// var lesroosterdag = false;
-// var contactdag = false;
-// var inschrijvendag = false;
-// var dagofnacht = true
-
-
-
-// slider.addEventListener('click', myFunction);
-
-// function myFunction(){
-//     if (dagofnacht === true){
-//         slider.classList.remove('nacht');
-//         slider.classList.add('dag');
-//         lesrooster.classList.add('dag');
-//         dagofnacht = false;
-//         console.log('index set to day');
-
-//     }
-//     else if(dagofnacht === false){
-//         slider.classList.remove('dag');
-//         slider.classList.add('nacht');
-//         dagofnacht = true;
-//         console.log('index set to night');
-//     }
-// }
-
-// dayNightSlider.addEventListener('input', function() {
-//     const sliderValue = parseInt(dayNightSlider.value);
-//     const isNight = sliderValue === 1;
-
-//     if (isNight) {
-//         index.classList.remove('dag');
-//         index.classList.add('nacht');
-//         indexdag = false;
-//         console.log('index set to night');
-//         lesrooster.classList.remove('dag');
-//         lesrooster.classList.add('nacht');
-//         contact.classList.remove('dag');
-//         contact.classList.add('nacht');
-//         inschrijven.classList.remove('dag');
-//         inschrijven.classList.add('nacht');
-//     } else {
-//         index.classList.remove('nacht');
-//         index.classList.add('dag');
-//         indexdag = true;
-//         console.log('index set to night');
-//         lesrooster.classList.remove('dag');
-//         lesrooster.classList.add('nacht');
-//         contact.classList.remove('dag');
-//         contact.classList.add('nacht');
-//         inschrijven.classList.remove('dag');
-//         inschrijven.classList.add('nacht');
-//     }
-// })
-
-// // Update class on initial load
-// if (sliderValue !== null) {
-//     dayNightSlider.value = sliderValue;
-//     updateSliderClass(sliderValue);
-// }
-
-// dayNightSlider.addEventListener('input', function() {
-//     const sliderValue = dayNightSlider.value;
-//     localStorage.setItem('sliderValue', sliderValue);
-//     updateSliderClass(sliderValue);
-// });
+// Toggle the 'enlarged' class when clicking on an image
+document.querySelectorAll('.image').forEach(function(image) {
+  image.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent the click event from bubbling up to the body
+      this.classList.toggle('enlarged');
+  });
+});
