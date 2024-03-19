@@ -174,6 +174,7 @@ body main #backgroundimg div:nth-of-type(5){
     margin: 15px 20px;
     position: relative;
     z-index: 2;
+    cursor: pointer;
 }
 
 .menu ul li ul li a{
@@ -186,10 +187,10 @@ body main #backgroundimg div:nth-of-type(5){
     bottom: 0;
     content: "";
     display: block;
-    height: 10px;
+    height: 5px;
     left: 50%;
     position: absolute;
-    top: 60%;
+    top: 80%;
     background: var(--kleur-hoverlijn);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
@@ -210,6 +211,7 @@ body main #backgroundimg div:nth-of-type(5){
     transform: translateX(-50%);
     background-color: var(--achtergrond-kleur-menu);
     width: 16em;
+    box-shadow: -10px 10px 30px #00000071;
     /* display: block; */
 }
 
@@ -336,9 +338,10 @@ body main #backgroundimg div:nth-of-type(5){
         display: none;
         position: absolute;
         top: 80%;
-        transform: translateX(-65%);
+        right: 0;
         background-color: var(--achtergrond-kleur-menu);
         width: 16em;
+        box-shadow: -10px 10px 10px #00000071;
         /* display: block; */
     }
     
@@ -348,7 +351,7 @@ body main #backgroundimg div:nth-of-type(5){
     }
     
     /* Show submenu on hover */
-    .phonemenu ul li:hover > ul{
+    .phonemenu ul .active > ul{
         display: block;
         width: 16em;
     }
@@ -367,12 +370,159 @@ body main #backgroundimg div:nth-of-type(5){
     }
 
     .phonemenu>ul>li>div{
+        cursor: pointer;
         height: 2em;
         width: 3em;
         background: linear-gradient(180deg, var(--kleur-text) 15%, var(--onzichtbaar) 15%, var(--onzichtbaar) 42.5%,
         var(--kleur-text) 42.5%, var(--kleur-text) 57.5%, var(--onzichtbaar) 57.5%, var(--onzichtbaar) 85%, var(--kleur-text) 85%);
     }
 }
+
+
+
+
+
+
+
+/*//////////////////*/
+/*/ ZIJKANT LOCATIES /*/
+/*//////////////////*/
+
+.zijkantlocaties{
+    top: 7em;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.zijkantlocaties a{
+    text-decoration: none;
+}
+
+.zijkantlocaties a {
+    background: linear-gradient(180deg, var(--achtergrond-kleur-menu) 97%, var(--kleur-h3) 97%);
+    width: 20em;
+    padding: 0.5em 2em;
+    margin: 0.8em 0;
+    position: relative;
+    height: 6em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #00000071;
+}
+
+.zijkantlocaties a:hover {
+    background: linear-gradient(180deg, var(--achtergrond-kleur-menu) 97%, var(--kleur-hoverlijn) 97%);
+}
+
+.zijkantlocaties a div div{
+    display: none;
+    position: fixed;
+    z-index: -1;
+}
+
+@media screen and (max-width: 87em) {
+    .zijkant{
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+    }
+
+    .zijkantlocaties{
+        /* top: 7em; */
+        position: initial;
+        display: flex;
+        flex-direction: unset;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: calc(10em + 40vw);
+    }
+
+    .zijkantlocaties a{
+        width: 48%;
+    }
+
+}
+
+@media screen and (max-width: 63em) {
+    .zijkantlocaties a{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 87em) {
+    .zijkantstreep{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 87em) {
+    .zijkantstreep{
+        display: flex;
+        justify-content: center;
+        margin: 2em 0;
+    }
+}
+
+
+
+
+
+/* .zijkantlocaties .zijdiv:after{
+    z-index: -1;
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "Klik voor rooster";
+    display: block;
+    height: 100px;
+    left: 50%;
+    position: absolute;
+    top: 60%;
+    background: var(--kleur-hoverlijn);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.zijkantlocaties .zijdiv:hover:after{
+    width: 100%; 
+    left: 0; 
+} */
+
+
+/* .menu>ul li>a:after, .menu>ul li>p:after{
+    z-index: -1;
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    top: 60%;
+    background: var(--kleur-hoverlijn);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.menu>ul li>a:hover:after, .menu>ul li>p:hover:after{
+    width: 100%; 
+    left: 0; 
+} */
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -455,6 +605,10 @@ body main #backgroundimg div:nth-of-type(5){
 
 #vallen div div{
     width: 100%;
+}
+
+#vallen img{
+    margin-top: 0.5em;
 }
 
 #meesterjeroen img, #budopak img, #vallen img{
@@ -572,6 +726,7 @@ body main #backgroundimg div:nth-of-type(5){
     margin: 10px 0;
     padding: 2em 0;
     width: calc(30vw + 10em);
+    cursor: pointer;
 }
 
 #roosters ul li>h3 {
@@ -590,10 +745,10 @@ body main #backgroundimg div:nth-of-type(5){
     bottom: 0;
     content: "";
     display: block;
-    height: 10px;
+    height: 5px;
     left: 50%;
     position: absolute;
-    top: 60%;
+    top: 50%;
     background: var(--kleur-hoverlijn);
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
@@ -661,6 +816,7 @@ body main #backgroundimg div:nth-of-type(5){
 
 #roosters .locatie{
     background: linear-gradient(180deg, var(--achtergrond-kleur-menu) 97%, var(--kleur-h3) 97%);
+    box-shadow: 0px 0px 10px #00000071;
 }
 
 @media screen and (max-width: 700px) {
@@ -704,6 +860,30 @@ body main #backgroundimg div:nth-of-type(5){
 }
 
 #contact main #contactdiv ul li{
+    padding: 0.6em;
+}
+
+#contact main #linksdiv{
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#contact main a{
+    color: var(--kleur-link);
+}
+
+#contact main #linksdiv ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#contact main #linksdiv ul li{
     padding: 0.6em;
 }
 
@@ -1004,7 +1184,6 @@ body main #backgroundimg div:nth-of-type(5){
 }
 }
 
-
 .image-container {
     display: flex;
     text-align: center;
@@ -1013,6 +1192,7 @@ body main #backgroundimg div:nth-of-type(5){
 
 .image:hover:not(.enlarged) {
     scale: 1.1;
+    box-shadow: 0px 0px 30px #000000b4;
 }
 
 .image{
@@ -1050,6 +1230,50 @@ div:has(.enlarged):after {
 }
 }
 
+
+
+/*//////////////////*/
+/*/ THUIS FILMPJES /*/
+/*//////////////////*/
+
+#filmpjes .filmdiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+#filmpjes .filmdiv>div{
+    width: 40vw;
+}
+
+#filmpjes .filmdiv div div{
+    display: flex;
+    flex-direction: column;
+}
+
+#filmpjes .filmdiv a{
+    margin: 0.2em 0;
+}
+
+#filmpjes .streep{
+    height: 2px;
+    width: 40vw;
+    background-color: var(--kleur-text);
+}
+
+@media screen and (max-width: 85em) {
+    #filmpjes .filmdiv div{
+        width: calc(50vw + 8em);
+    }
+
+    #filmpjes .filmdiv div p{
+        width: calc(50vw + 8em);
+    }
+
+    #filmpjes .streep{
+        width: calc(50vw + 8em)
+    }
+}
 
 
 
