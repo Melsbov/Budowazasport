@@ -686,7 +686,7 @@ body main #backgroundimg div:nth-of-type(5){
 #vakantierooster{
     /* VAKANTIE ROOSTER AAN = Display flex 
     VAKANTIE ROOSTER UIT = Display none */
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;    
